@@ -108,10 +108,7 @@ const triangulation = (points: Vector2[]) => {
 };
 
 // 将一组线段连接成多边形
-export const getAllPolygons = (
-  points: Vector2[],
-  tolerance: number = 0.000001
-) => {
+export const getAllPolygons = (points: Vector2[], tolerance: number) => {
   if (points.length < 2) return [];
 
   // 构建图

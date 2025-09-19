@@ -4,6 +4,7 @@ import { button, useControls } from "leva";
 import { useRef, useState } from "react";
 import { DoubleSide, LineSegments, Mesh } from "three";
 import {
+  clipToleranceAtom,
   latestClipWastedTimeAtom,
   theLongestEdgeLengthAtom,
 } from "../shared-variables";
@@ -26,6 +27,8 @@ const ClipPlayground = () => {
 
   const setLatestClipWastedTime = useSetAtom(latestClipWastedTimeAtom);
 
+  const clipTolerance = useAtomValue(clipToleranceAtom);
+
   const handleClip = () => {
     setLatestClipWastedTime(0);
     if (clipPlaneMeshRef.current) {
@@ -33,7 +36,8 @@ const ClipPlayground = () => {
       buildBvh((item) => item.userData.canClip);
       const { lines, meshList } = clip(
         clipPlaneMeshRef.current,
-        (item) => item.userData.canClip
+        (item) => item.userData.canClip,
+        clipTolerance
       );
       const endtime = performance.now();
       const time = endtime - startTime;
