@@ -14,3 +14,5 @@ export const modelFileNameAtom = atom<string | null>(null);
 export const theLongestEdgeLengthAtom = atom<number>(0);
 
 export const latestClipWastedTimeAtom = atom<number>(0);
+
+export const clipToleranceAtom = atom<number>(0.000001);

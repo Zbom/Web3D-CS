@@ -3,6 +3,7 @@ import { useAtom, useSetAtom } from "jotai";
 import { toast } from "sonner";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import {
+  clipToleranceAtom,
   modelFileNameAtom,
   modelParsedAtom,
   theLongestEdgeLengthAtom,
@@ -63,6 +64,8 @@ const ModelInput = () => {
     }
   };
 
+  const [clipTolerance, setClipTolerance] = useAtom(clipToleranceAtom);
+
   return (
     <div className="flex gap-4">
       <div className="flex flex-col gap-4">
@@ -110,6 +113,19 @@ const ModelInput = () => {
             />
           </svg>
           <span>超过100M的模型，请从本地上传</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="badge whitespace-nowrap">剪裁容差:</span>
+          <input
+            className="input flex-1"
+            type="number"
+            value={clipTolerance}
+            placeholder="剪裁容差"
+            step={0.000001}
+            onChange={(e) => {
+              setClipTolerance(+e.target.value);
+            }}
+          />
         </div>
       </div>
       {modelFileName && (
