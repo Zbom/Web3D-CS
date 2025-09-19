@@ -39,7 +39,7 @@ function App() {
       <div className="fixed left-4 top-4">
         <ModelInput />
       </div>
-      <div className="fixed left-4 top-[72px] w-[294px]">
+      <div className="fixed left-4 top-32 w-[294px]">
         <Leva fill titleBar={{ drag: false, filter: false }} />
       </div>
       <div className="fixed right-4 top-4">
