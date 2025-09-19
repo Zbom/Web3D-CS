@@ -10,6 +10,8 @@ import {
   Matrix4,
   BufferGeometry,
   BufferAttribute,
+  MeshStandardMaterial,
+  DoubleSide,
 } from "three";
 import { MeshBVH } from "three-mesh-bvh";
 import { useThree } from "@react-three/fiber";
@@ -297,6 +299,7 @@ const useClip = () => {
             const g = new BufferGeometry();
             g.setFromPoints(vector3List);
             g.computeBoundingBox();
+            ((item as Mesh).material as MeshStandardMaterial).side = DoubleSide;
             const mesh = new Mesh(g, (item as Mesh).material);
             mesh.userData.isClipResult = true;
             mesh.applyMatrix4(planeMesh.matrixWorld);

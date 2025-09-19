@@ -93,6 +93,7 @@ const ModelInput = () => {
           <option value="293454.glb">293454</option>
           <option value="372112.glb">372112</option>
           <option value="441708.glb">441708</option>
+          <option value="demo.glb">demo</option>
         </select>
         <div role="alert" className="alert alert-warning">
           <svg
