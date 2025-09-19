@@ -1,0 +1,43 @@
+{
+  "name": "clip-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.3.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "@tanstack/react-query": "^5.89.0",
+    "jotai": "^2.14.0",
+    "leva": "^0.10.0",
+    "r3f-perf": "^7.2.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sonner": "^2.0.7",
+    "tailwindcss": "^4.1.13",
+    "three": "~0.171.0",
+    "three-mesh-bvh": "^0.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@types/three": "~0.171.0",
+    "@vitejs/plugin-react-swc": "^4.0.1",
+    "daisyui": "^5.1.13",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.43.0",
+    "vite": "^7.1.6",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
